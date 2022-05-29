@@ -1,18 +1,20 @@
 # Site settings
 remote_theme:   chesterhow/tale
 title:          IT in Wonderland
-description:    "Minimal Jekyll theme for storytellers"
+description:    "A Place to Discuss System Design, Startups, Management, and Other Wonders from the IT World."
 baseurl:        ""
-url:            "https://chesterhow.github.io"
+url:            "https://itinwonderland.com/"
+in_username:    "zarrie"
 
 # Google Analytics
-google_analytics: UA—XXXXXXXX-X
+google_analytics: G-Q0NZGL0CY3
 
 # Author
 author:
   name:         Viktor Ivanov
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  url:          https://itinwonderland.com/
+  email:        viktoriivanov@yahoo.com
+  linkedin:     https://www.linkedin.com/in/zarrie/
 
 # Build settings
 markdown:       kramdown
@@ -30,7 +32,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
-  # - jemoji #Uncomment this to allow emoji in your post
+  - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks
 permalink:      /:title
