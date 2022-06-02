@@ -8,6 +8,7 @@ permalink: /about/
 # About the Blog
 
 IT in Wonderland is a place to read about solving challenges related to System Design, Software Architecture, and Distributed Systems on AWS.
+Each article is an example of a solution designing a system. 
 
 Though some articles related to management, startups, work, or philosophy might slip from time to time. 🤓
 

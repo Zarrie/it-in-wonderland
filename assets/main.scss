@@ -4,18 +4,26 @@
 
 @import 'tale';
 
-.logo{
-  width: 250px;
-}
-
 @media only screen and (max-width: 599px) {
-  .logo {
+  .logo{
     margin: auto;
   }
+}
+
+.logo{
+  width: 30vw;
+  max-width: 250px;
 }
 
 .arrow{
   font-size: 20px;
   width: 40px;
   margin: auto;
+}
+
+pre,
+code {
+    font-size: 15px;
+    border-radius: 9px;
+    background-color: #eef;
 }

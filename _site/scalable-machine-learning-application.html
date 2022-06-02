@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Scalable Machine Learning Application | IT in Wonderland</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Scalable Machine Learning Application" />
+<meta name="author" content="Viktor" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application." />
+<meta property="og:description" content="Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application." />
+<link rel="canonical" href="http://localhost:4000/scalable-machine-learning-application" />
+<meta property="og:url" content="http://localhost:4000/scalable-machine-learning-application" />
+<meta property="og:site_name" content="IT in Wonderland" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-29T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Scalable Machine Learning Application" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Viktor"},"dateModified":"2022-05-29T00:00:00+03:00","datePublished":"2022-05-29T00:00:00+03:00","description":"Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.","headline":"Scalable Machine Learning Application","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/scalable-machine-learning-application"},"url":"http://localhost:4000/scalable-machine-learning-application"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="IT in Wonderland" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <div class="row mx-auto">
+      <a href="/">
+        <img class="logo" src="/assets/logo.png">
+      </a>
+    </div>
+    <div class="row">
+      <ul>
+        <li><a href="/">Posts</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Viktor
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2022-05-29 00:00:00 +0300">May 29, 2022</time>
+    
+  </div>
+
+  <h1 class="post-title">Scalable Machine Learning Application</h1>
+  <div class="post-line"></div>
+
+  <p>Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.</p>
+
+<p>To keep your whole system decoupled, you’d probably want to encapsulate the model in a microservice to
+satisfy the specific computational requirements easier and scale the service independently of the rest of your application.</p>
+
+<p>Let’s design an example application solving that problem with the given requirements it tries to satisfy.</p>
+
+<p>Requirements:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Model size: 1GB
+Requests per second: 500 
+Model response time: ~1sec/item
+Unevenly distributed load throughout the day
+</code></pre></div></div>
+
+<h2 id="analysing-the-requirements">Analysing the requirements</h2>
+
+<p>Based on the number of requests per second and the model’s response time we can conclude that a single model instance won’t be enough to handle the load, so we will need more resources to satisfy the load requirements.</p>
+
+<p>A good idea is to have a pool of workers that handle the upcoming requests.</p>
+
+<p><img src="/assets/posts/worker-pool.png" alt="Worker Pool" /></p>
+
+<p>This pool can be provisioned in many ways including</p>
+<ul>
+  <li>Raw EC2 instances</li>
+  <li>Kubernetes</li>
+  <li>AWS Lambda</li>
+  <li>EKS</li>
+  <li>ECS</li>
+</ul>
+
+<p>and many more.</p>
+
+<h3 id="aws-lambda">AWS Lambda</h3>
+
+<p>Considering the size of the model it’s pretty clear that any option including loading the model periodically is not feasible, as it will drown the application due to the slow i/o operation reading from the filesystem.</p>
+
+<p>This means that AWS Lambda is not a good fit for the use case. 
+If the model was much smaller Lambda would be a good option for this.</p>
+
+<p>Though Lambda will load the model and then stay alive for around 15 mins I still consider this too short and leading 
+to too many unnecessary i/o operations.</p>
+
+<p>* Workarounds are possible [<a href="https://aws.amazon.com/blogs/compute/container-reuse-in-lambda/" target="_blank">see Lambda container reuse</a>],
+but I feel this is too complicated and won’t consider it unless I have a strong reason to do so.</p>
+
+<h3 id="kubernetes--elastic-kubernetes-service">Kubernetes / Elastic Kubernetes Service</h3>
+
+<p>We can provision a cluster with many nodes to serve as a worker pool by manually installing Kubernetes on an ec2 instance,
+or - if we don’t feel like shooting ourselves in the foot, we can use EKS and skip the manual Kubernetes configuration.</p>
+
+<p>While this is a great solution, it requires a solid team and lots of dev-ops and engineering expertise to
+keep alive - cluster updates, provisioning, security, and networking are just the bare minimum to set up such an application
+on that infrastructure.</p>
+
+<p>Definitely, the flexibility here is nearly unlimited, and it’s a bit more platform-agnostic compared to other solutions as 
+Kubernetes is a standardized open-source technology but assuming we are working on a new service building a proof of concept
+I wouldn’t invest the time at this stage until I have a deeper understanding of my application and its scope.</p>
+
+<p>In terms of architecture complexity, this solution is simpler as it does not require an external Load Balancer, 
+since the Kubernetes built-in Ingress can do a pretty good job balancing the load without paying for a dedicated Load Balancer in AWS.</p>
+
+<h2 id="elastic-container-service">Elastic Container Service</h2>
+
+<p>Since we have our application containerized, we can utilize the AWS Elastic Container Service, which is similar 
+to K8S and EKS, but uses proprietary AWS control plane and is way easier to configure and manage than EKS.</p>
+
+<p>We can create a cluster of EC2 instances hosting our containers, or we can go a step further
+and use <a href="https://aws.amazon.com/fargate/" target="_blank">Fargate</a> which is a serverless engine allowing building 
+apps without managing servers.</p>
+
+<p>Bottom line ECS is an out-of-box solution for managing our cluster of workers, and Fargate is a solution
+managing the infrastructure for the workers themselves, which essentially leaves us with the only burden of managing
+our worker application itself.</p>
+
+<p><img src="/assets/posts/elb-ecs-fargate-cluster.png" alt="AWS ECS Cluster with Fargate and ALB" /></p>
+
+<h3 id="elastic-load-balancer">Elastic Load Balancer</h3>
+
+<p>After having the cluster set up, we need a load-balancer to distribute the traffic among the container instances.</p>
+
+<p>We have two options worth exploring:</p>
+
+<h4 id="application-load-balancer">Application Load Balancer</h4>
+
+<p>Working at level 7 (HTTP), ALB provides great flexibility in choosing how to distribute the load of your application.
+If there is a custom field or want to ensure certain properties are met 
+(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )</p>
+
+<h4 id="network-load-balancer">Network Load Balancer</h4>
+
+<p>Given the requirements of our application, we are completely okay with not implementing any custom logic affecting the balancing
+of the load, so we can use NLB, which works on level 4 of the OSI model, allowing it to achieve great performance and scale to millions of requests per second.</p>
+
+<p>With that, the design of our scalable application serving the heavy ML model is done.</p>
+
+<p>Reviewing the requirements, we can conclude the following:</p>
+
+<ul>
+  <li>The container can load the 1 GB and store it in memory for a long time</li>
+  <li>The Network Load Balancer and Fargate can easily handle the 500/sec requests</li>
+  <li>Fargate will scale up and down to the required number of containers to process all the requests in parallel 
+and adapt to the load level</li>
+</ul>
+
+<h3 id="further-optimizations">Further optimizations:</h3>
+
+<p>We can further optimize the application to both reduce cost and resources and increase efficiency.</p>
+
+<p>Some on top of the head ideas that help achieve that:</p>
+
+<ul>
+  <li>Group items to utilize batch predictions
+Buffering items in a queue and processing them in a batch of 100 will almost not affect the response time due to the number of requests
+per day, while a Machine Learning model can significantly benefit from such batching utilizing vectorized computations.</li>
+  <li>Utilize a GPU inside the docker container
+Docker allows using a GPU if such is available. EC2 has GPU Instances available, which can reduce the 1 second response time of 
+the model to a couple of milliseconds.</li>
+</ul>
+
+<p><strong>Thank you for reading!</strong></p>
+
+
+</div>
+
+
+
+<div class="pagination">
+  
+    <a href="/reliable-notifications-system" class="left arrow">&#8592;</a>
+  
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-06-02 20:29:01 +0300">2022</time> IT in Wonderland
+  </span>
+</footer>
+
+  </body>
+</html>

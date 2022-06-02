@@ -1,128 +1,282 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-05-29T15:51:38+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT in Wonderland</title><subtitle>A Place to Discuss System Design, Startups, Management, and Other Wonders from the IT World.</subtitle><author><name>Viktor Ivanov</name><email>viktoriivanov@yahoo.com</email></author><entry><title type="html">Example Content</title><link href="http://localhost:4000/example-content" rel="alternate" type="text/html" title="Example Content" /><published>2017-03-16T00:00:00+02:00</published><updated>2017-03-16T00:00:00+02:00</updated><id>http://localhost:4000/example-content</id><content type="html" xml:base="http://localhost:4000/example-content"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.<!--more--> Nullam interdum ultricies nibh quis sollicitudin. Donec ornare fermentum facilisis. Ut at sem ac sem imperdiet varius a eget tortor. Nam eu augue eget orci semper maximus in eget augue. Mauris ornare, nisl ut suscipit consectetur, mi quam interdum tellus, at rutrum quam eros ultrices mi.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-02T20:29:01+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT in Wonderland</title><subtitle>A Place to Discuss System Design, Startups, Management, and Other Wonders from the IT World.</subtitle><author><name>Viktor Ivanov</name><email>viktoriivanov@yahoo.com</email></author><entry><title type="html">Tour Of Duty</title><link href="http://localhost:4000/tour-of-duty" rel="alternate" type="text/html" title="Tour Of Duty" /><published>2022-06-02T00:00:00+03:00</published><updated>2022-06-02T00:00:00+03:00</updated><id>http://localhost:4000/tour-of-duty</id><content type="html" xml:base="http://localhost:4000/tour-of-duty"><![CDATA[<p>Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the
+really inconvenient question</p>
 
-<h1 id="headers">Headers</h1>
+<p><em>“Tell me something you achieved or built on your current position”</em></p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="gh"># H1</span>
-<span class="gu">## H2</span>
-<span class="gu">### H3</span>
-<span class="gu">#### H4</span>
-<span class="gu">##### H5</span>
-<span class="gu">###### H6</span></code></pre></figure>
+<p>This is the moment when you fast-forward that couple of years you spent working on a bunch of stuff, moving Jira tickets left to right, fixing bugs, writing tests, handling new types of data in a pipeline, etc. All this without actually building something big or making any significance at all.</p>
 
-<h1 id="h1">H1</h1>
-<h2 id="h2">H2</h2>
-<h3 id="h3">H3</h3>
-<h4 id="h4">H4</h4>
-<h5 id="h5">H5</h5>
-<h6 id="h6">H6</h6>
+<p>The same goes for your whole team, of course, as if there was something to be built in the first place, you wouldn’t do it on your own.</p>
 
-<h1 id="text-formatting">Text formatting</h1>
+<p>Don’t get it wrong - someone has to do that job, and there are a lot of people who are ready and happy to do it.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="p">-</span> <span class="gs">**Bold**</span>
-<span class="p">-</span> _Italics_
-<span class="p">-</span> ~~Strikethrough~~
-<span class="p">-</span> <span class="nt">&lt;ins&gt;</span>Underline<span class="nt">&lt;/ins&gt;</span>
-<span class="p">-</span> <span class="nt">&lt;sup&gt;</span>Superscript<span class="nt">&lt;/sup&gt;</span>
-<span class="p">-</span> <span class="nt">&lt;sub&gt;</span>Subscript<span class="nt">&lt;/sub&gt;</span>
-<span class="p">-</span> Abbreviation: <span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"HyperText Markup Language"</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/abbr&gt;</span>
-<span class="p">-</span> Citation: <span class="nt">&lt;cite&gt;</span><span class="ni">&amp;mdash;</span> Chester How<span class="nt">&lt;/cite&gt;</span></code></pre></figure>
+<p>The goal of this post is to help you become aware of the difference there and put the question of which one you want to be.</p>
 
-<ul>
-  <li><strong>Bold</strong></li>
-  <li><em>Italics</em></li>
-  <li><del>Strikethrough</del></li>
-  <li><ins>Underline</ins></li>
-  <li><sup>Superscript</sup></li>
-  <li><sub>Subscript</sub></li>
-  <li>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></li>
-  <li>Citation: <cite>— Chester How</cite></li>
-</ul>
+<h2 id="what-is-a-tour-of-duty">What is a Tour of Duty</h2>
 
-<h1 id="lists">Lists</h1>
+<p>A Tour of Duty is a mutually beneficial informal agreement between an employer and an employee.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="p">1.</span> Ordered list item 1
-<span class="p">2.</span> Ordered list item 2
-<span class="p">3.</span> Ordered list item 3
-<span class="p">
-*</span> Unordered list item 1
-<span class="p">*</span> Unordered list item 2
-<span class="p">*</span> Unordered list item 3</code></pre></figure>
+<p>In addition to agreeing on salary, position, and probation period, you informally agree on a set of measurable and scoped OKRs.</p>
+
+<p>For example, an Employer is building a new feature, vertical, or a whole new product and is hiring a dedicated team for that.</p>
+
+<p>A Tour of Duty in this case might consist of:</p>
 
 <ol>
-  <li>Ordered list item 1</li>
-  <li>Ordered list item 2</li>
-  <li>Ordered list item 3</li>
+  <li>Building and supporting a Proof of Concept</li>
+  <li>Iterating for 3-6 months until achieving product/market fit</li>
+  <li>Leaving a stable product with proper pipelines, tests, and processes set up all working automatically.</li>
 </ol>
 
+<p>The timespan might vary between 12 and 18 months, which, if successfully delivered, results in a big bonus, promotion and 
+another proposal for a Tour of Duty - maybe scaling the product to millions of users or working on another one.</p>
+
+<p>Such an approach for hiring / looking for a job is mutually beneficial as it sets clear and measurable responsibilities and expectations by the employer.</p>
+
+<p>On the other side, the employee has clear expectations about what has to be done, for how long, and what the outcome be for both sides.</p>
+
+<p>The end of a Tour of Duty might naturally lead to the end of the employment relations as well but in the IT industry lifelong employment in a single company is rare nowadays anyway.</p>
+
+<p>It is obvious that this approach mitigates the situation described above, but how does that work in practice?</p>
+
+<h2 id="agreeing-on-a-tour-of-duty">Agreeing on a Tour of Duty</h2>
+
+<p>When you go to an interview, a pretty straightforward way for you to get a good idea about your Tour of duty is to ask the Hiring Manager what are you and your team going to work on in the next 6 to 12 months? What are the set OKRs for the company for the next 1-2 years, and how is your team going to contribute to that.</p>
+
+<p>Naturally leading the conversation with such questions can give you a pretty good understanding of what to expect.</p>
+
+<p>In the case of a way smaller/start-up company, you might even formally agree on a tour of duty as you might end up owning a whole vertical
+of the company, or implementing a whole feature on your own, but this is rarely the case in big tech companies, so usually, the first option is what you will find yourself utilizing in practice.</p>
+
+<h2 id="what-about-the-business-as-usual-work">What about the Business as Usual work?</h2>
+
+<p>As I said previously, there is some BaU(Business as Usual) work to be done, and someone has to do it.</p>
+
+<p>You might be that person after all.</p>
+
+<p>It’s not a coincidence that <a href="https://en.wikipedia.org/wiki/Tour_of_duty" target="_blank">Tour of Duty</a> is a term borrowed from military jargon.
+Having the responsibility to develop or scale a whole product requires a great amount of hard and soft skills, patience and usually requires walking the extra mile,
+sacrificing personal time and dedicating to that product for the time of the Tour, and this is a decision that not everyone is ready to take.</p>
+
+<p>There is plenty to be learned in a project and a team, even during a Reserve Duty.</p>
+
+<p>Tour of Duty is a great concept to benefit both companies and employees, and I believe worth considering more often.</p>
+
+<p>You might be interested in rotating the two approaches throughout your career instead of solely focusing on only one of them,
+but now I hope you have a better understanding of the difference and that there is actually one so you can make a bit more informed decision the next time.</p>
+
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="Management" /><category term="Work" /><category term="Career" /><summary type="html"><![CDATA[Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the really inconvenient question]]></summary></entry><entry><title type="html">Reliable Notification System</title><link href="http://localhost:4000/reliable-notifications-system" rel="alternate" type="text/html" title="Reliable Notification System" /><published>2022-05-31T00:00:00+03:00</published><updated>2022-05-31T00:00:00+03:00</updated><id>http://localhost:4000/reliable-notifications-system</id><content type="html" xml:base="http://localhost:4000/reliable-notifications-system"><![CDATA[<p>Almost any application aims to increase engagement by sending notifications to its users.
+LinkedIn sends a notification when someone sees your profile,
+Facebook, when someone sends you a friend request,
+AngelList when your job application has been updated, and so on.</p>
+
+<p>Let’s design such a system enabling great marketing capabilities for an application we are working on.</p>
+
+<p>Requirements:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Events per second: 10,000 
+Notifications type: Email (with easy extensibility to other SMS, push notifications, and more)
+Events source: DynamoDB
+Every event results in an exactly-one notification
+</code></pre></div></div>
+
+<h2 id="analysing-the-requirements">Analysing the requirements</h2>
+
+<h3 id="load">Load</h3>
+
+<p>Considering the number of events per second, we will need a pretty scalable system sending over
+860,400,000 notifications a day.</p>
+
+<p>We can safely assume that each event and notification message will be relatively small - no more than
+a couple of Kbs, Let’s say 5Kb.</p>
+
+<p>This results in 50 Mb/s (400 MB/s) bandwidth, which is no problem for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html" target="_blank">AWS and EC2 Network capabilities</a></p>
+
+<h3 id="notifications-type">Notifications type</h3>
+
+<p>Initially, we want to send email notifications to the users of our application, but we want to support easy
+extensibility with SMS and push notifications, for example.</p>
+
+<p>This means we will need a computational unit ( e.g. server ) to decide and broadcast the event notification and be
+easy to modify and extend.</p>
+
+<h2 id="dynamodb-streams">DynamoDB Streams</h2>
+
+<p>Events are being produced and stored in DynamoDB, as we already know. So we need a way to consume and process them.</p>
+
+<p>DynamoDB Streams is a convenient way to get notified when a change has happened in a DynamoDB table.
+We can subscribe for any of CREATE, UPDATE and DELETE events.</p>
+
+<p>Based on AWS Kinesis DynamoDB Streams provide high performance and reliability. According to their <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html" target="_blank">documentation</a></p>
+
+<p><strong>DynamoDB Streams helps ensure the following:</strong></p>
+
 <ul>
-  <li>Unordered list item 1</li>
-  <li>Unordered list item 2</li>
-  <li>Unordered list item 3</li>
+  <li>
+    <p><strong>Each stream record appears exactly once in the stream.</strong></p>
+  </li>
+  <li>
+    <p><strong>For each item modified in a DynamoDB table, the stream records appear in the same sequence as the actual modifications to the item.</strong></p>
+  </li>
 </ul>
 
-<h1 id="links">Links</h1>
+<p>Which meets the exactly-once delivery criteria in the requirements of our application.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">Check out tale on <span class="p">[</span><span class="nv">GitHub</span><span class="p">](</span><span class="sx">https://github.com/chesterhow/tale</span><span class="p">)</span>.</code></pre></figure>
+<h2 id="ec2">EC2</h2>
 
-<p>Check out tale on <a href="https://github.com/chesterhow/tale">GitHub</a>.</p>
+<p>We can start thinking of running a server app deployed on an EC2 instance consuming the events and producing notifications, and it would not be a bad solution at all, but 
+is a dedicated server actually necessary?</p>
 
-<h1 id="images">Images</h1>
+<p>Having a dedicated server comes with all the problems of keeping the server alive, ensuring up-time, updating and deploying the app without any downtime, and so on.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="p">![</span><span class="nv">Placeholder image</span><span class="p">](</span><span class="sx">https://placehold.it/800x400</span> <span class="nn">"Placeholder image"</span><span class="p">)</span>
+<h2 id="lambda">Lambda</h2>
 
-<span class="p">![</span><span class="nv">Image with caption</span><span class="p">](</span><span class="sx">https://placehold.it/700x400</span> <span class="nn">"Image with caption"</span><span class="p">)</span>
-<span class="ge">_This is an image with a caption_</span></code></pre></figure>
+<p>This system is asynchronous by design as we are getting the events, and no one waits to check what happens to them.
+We can leverage that by utilizing AWS Lambda as the computational unit we mentioned.</p>
 
-<p><img src="https://placehold.it/800x400" alt="Placeholder image" title="Placeholder image" /></p>
+<p>At this point, maybe you wonder why use EC2 or Lambda at all and not just filter-based SNS forwarding messages to the Simple Email Service?
+Because having a dedicated computational unit in the pipeline allows greater flexibility and mitigates the unreliable nature of SNS.</p>
 
-<p><img src="https://placehold.it/700x400" alt="Image with caption" title="Image with caption" />
-<em>This is an image with a caption</em></p>
+<p>Imagine a future case where you want to send a text message to some user via 3rd party SMS service.
+An event is being stored in DynamoDB and notified through the table stream to SNS, which then filters it and broadcasts it to the appropriate 3rd party service, which unfortunately turns out to be down. The notification is forever lost!</p>
 
-<h1 id="code-and-syntax-highlighting">Code and Syntax Highlighting</h1>
-<p>Use back-ticks for <code class="language-plaintext highlighter-rouge">inline code</code>. Multi-line code snippets are supported too through Pygments.</p>
+<p>Having a lambda allows retrying or waiting for confirmation which ensures the requested from our application reliability and 
+allows logging the failed notifications, so they can be later processed and eventually delivered.</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Sample javascript code</span>
-<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">JavaScript syntax highlighting</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span></code></pre></figure>
+<p>In addition to that Lambda allows easy implementation of programmatic filtering based on complex attributes living in external DBs and services.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Sample python code
-</span><span class="n">s</span> <span class="o">=</span> <span class="s">"Python syntax highlighting"</span>
-<span class="k">print</span> <span class="n">s</span></code></pre></figure>
+<p>And Finally, it takes less to no time to integrate with DynamoDB Streams and plug in the pipeline, so it’s worth the effort.</p>
 
-<p>Adding <code class="language-plaintext highlighter-rouge">linenos</code> to the highlight tag enables line numbers.</p>
+<h3 id="why-lambda-and-not-ec2">Why Lambda and not EC2?</h3>
+<ul>
+  <li>You don’t have to manage infrastructure</li>
+  <li>It supports easy deployment without downtime, enabling quick updates of business logic and delivery of features.</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="code"><pre><span class="c1">// Sample javascript code</span>
-<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">JavaScript syntax highlighting</span><span class="dl">"</span><span class="p">;</span>
-<span class="nx">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-</pre></td></tr></tbody></table></code></pre></figure>
+<p>Reviewing the requirements, we can conclude the following:</p>
 
-<h1 id="blockquotes">Blockquotes</h1>
+<ul>
+  <li>Lambda can scale up to 1,000 instances and handle 10,000 events/sec with ease.</li>
+  <li>With an appropriate design pattern, we can support many 3rd party services handling the different notification types without compromising the integrity of our service.</li>
+  <li>DynamoDB Streams ( Kinesis ) comes with out-of-the-box exactly-once delivery which combined with Lambda satisfies the ‘exactly one notification’ requirement.</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="gt">&gt; Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</span></code></pre></figure>
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="DynamoDB" /><category term="Kinesis" /><category term="Lambda" /><category term="SES" /><summary type="html"><![CDATA[Almost any application aims to increase engagement by sending notifications to its users. LinkedIn sends a notification when someone sees your profile, Facebook, when someone sends you a friend request, AngelList when your job application has been updated, and so on.]]></summary></entry><entry><title type="html">Scalable Machine Learning Application</title><link href="http://localhost:4000/scalable-machine-learning-application" rel="alternate" type="text/html" title="Scalable Machine Learning Application" /><published>2022-05-29T00:00:00+03:00</published><updated>2022-05-29T00:00:00+03:00</updated><id>http://localhost:4000/scalable-machine-learning-application</id><content type="html" xml:base="http://localhost:4000/scalable-machine-learning-application"><![CDATA[<p>Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.</p>
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
+<p>To keep your whole system decoupled, you’d probably want to encapsulate the model in a microservice to
+satisfy the specific computational requirements easier and scale the service independently of the rest of your application.</p>
 
-<h1 id="horizontal-rule--line-break">Horizontal Rule &amp; Line Break</h1>
+<p>Let’s design an example application solving that problem with the given requirements it tries to satisfy.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">Use <span class="sb">`&lt;hr&gt;`</span> for horizontal rules
+<p>Requirements:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Model size: 1GB
+Requests per second: 500 
+Model response time: ~1sec/item
+Unevenly distributed load throughout the day
+</code></pre></div></div>
 
-<span class="nt">&lt;hr&gt;</span>
+<h2 id="analysing-the-requirements">Analysing the requirements</h2>
 
-and <span class="sb">`&lt;br&gt;`</span> for line breaks.
+<p>Based on the number of requests per second and the model’s response time we can conclude that a single model instance won’t be enough to handle the load, so we will need more resources to satisfy the load requirements.</p>
 
-<span class="nt">&lt;br&gt;</span></code></pre></figure>
+<p>A good idea is to have a pool of workers that handle the upcoming requests.</p>
 
-<p>Use <code class="language-plaintext highlighter-rouge">&lt;hr&gt;</code> for horizontal rules</p>
+<p><img src="/assets/posts/worker-pool.png" alt="Worker Pool" /></p>
 
-<hr />
+<p>This pool can be provisioned in many ways including</p>
+<ul>
+  <li>Raw EC2 instances</li>
+  <li>Kubernetes</li>
+  <li>AWS Lambda</li>
+  <li>EKS</li>
+  <li>ECS</li>
+</ul>
 
-<p>and <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> for line breaks.</p>
+<p>and many more.</p>
 
-<p><br /></p>
+<h3 id="aws-lambda">AWS Lambda</h3>
 
-<p><em>The end</em></p>]]></content><author><name>Chester</name></author><summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt ornare nibh, non elementum augue tempus eget. Pellentesque tempus scelerisque iaculis.]]></summary></entry></feed>
+<p>Considering the size of the model it’s pretty clear that any option including loading the model periodically is not feasible, as it will drown the application due to the slow i/o operation reading from the filesystem.</p>
+
+<p>This means that AWS Lambda is not a good fit for the use case. 
+If the model was much smaller Lambda would be a good option for this.</p>
+
+<p>Though Lambda will load the model and then stay alive for around 15 mins I still consider this too short and leading 
+to too many unnecessary i/o operations.</p>
+
+<p>* Workarounds are possible [<a href="https://aws.amazon.com/blogs/compute/container-reuse-in-lambda/" target="_blank">see Lambda container reuse</a>],
+but I feel this is too complicated and won’t consider it unless I have a strong reason to do so.</p>
+
+<h3 id="kubernetes--elastic-kubernetes-service">Kubernetes / Elastic Kubernetes Service</h3>
+
+<p>We can provision a cluster with many nodes to serve as a worker pool by manually installing Kubernetes on an ec2 instance,
+or - if we don’t feel like shooting ourselves in the foot, we can use EKS and skip the manual Kubernetes configuration.</p>
+
+<p>While this is a great solution, it requires a solid team and lots of dev-ops and engineering expertise to
+keep alive - cluster updates, provisioning, security, and networking are just the bare minimum to set up such an application
+on that infrastructure.</p>
+
+<p>Definitely, the flexibility here is nearly unlimited, and it’s a bit more platform-agnostic compared to other solutions as 
+Kubernetes is a standardized open-source technology but assuming we are working on a new service building a proof of concept
+I wouldn’t invest the time at this stage until I have a deeper understanding of my application and its scope.</p>
+
+<p>In terms of architecture complexity, this solution is simpler as it does not require an external Load Balancer, 
+since the Kubernetes built-in Ingress can do a pretty good job balancing the load without paying for a dedicated Load Balancer in AWS.</p>
+
+<h2 id="elastic-container-service">Elastic Container Service</h2>
+
+<p>Since we have our application containerized, we can utilize the AWS Elastic Container Service, which is similar 
+to K8S and EKS, but uses proprietary AWS control plane and is way easier to configure and manage than EKS.</p>
+
+<p>We can create a cluster of EC2 instances hosting our containers, or we can go a step further
+and use <a href="https://aws.amazon.com/fargate/" target="_blank">Fargate</a> which is a serverless engine allowing building 
+apps without managing servers.</p>
+
+<p>Bottom line ECS is an out-of-box solution for managing our cluster of workers, and Fargate is a solution
+managing the infrastructure for the workers themselves, which essentially leaves us with the only burden of managing
+our worker application itself.</p>
+
+<p><img src="/assets/posts/elb-ecs-fargate-cluster.png" alt="AWS ECS Cluster with Fargate and ALB" /></p>
+
+<h3 id="elastic-load-balancer">Elastic Load Balancer</h3>
+
+<p>After having the cluster set up, we need a load-balancer to distribute the traffic among the container instances.</p>
+
+<p>We have two options worth exploring:</p>
+
+<h4 id="application-load-balancer">Application Load Balancer</h4>
+
+<p>Working at level 7 (HTTP), ALB provides great flexibility in choosing how to distribute the load of your application.
+If there is a custom field or want to ensure certain properties are met 
+(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )</p>
+
+<h4 id="network-load-balancer">Network Load Balancer</h4>
+
+<p>Given the requirements of our application, we are completely okay with not implementing any custom logic affecting the balancing
+of the load, so we can use NLB, which works on level 4 of the OSI model, allowing it to achieve great performance and scale to millions of requests per second.</p>
+
+<p>With that, the design of our scalable application serving the heavy ML model is done.</p>
+
+<p>Reviewing the requirements, we can conclude the following:</p>
+
+<ul>
+  <li>The container can load the 1 GB and store it in memory for a long time</li>
+  <li>The Network Load Balancer and Fargate can easily handle the 500/sec requests</li>
+  <li>Fargate will scale up and down to the required number of containers to process all the requests in parallel 
+and adapt to the load level</li>
+</ul>
+
+<h3 id="further-optimizations">Further optimizations:</h3>
+
+<p>We can further optimize the application to both reduce cost and resources and increase efficiency.</p>
+
+<p>Some on top of the head ideas that help achieve that:</p>
+
+<ul>
+  <li>Group items to utilize batch predictions
+Buffering items in a queue and processing them in a batch of 100 will almost not affect the response time due to the number of requests
+per day, while a Machine Learning model can significantly benefit from such batching utilizing vectorized computations.</li>
+  <li>Utilize a GPU inside the docker container
+Docker allows using a GPU if such is available. EC2 has GPU Instances available, which can reduce the 1 second response time of 
+the model to a couple of milliseconds.</li>
+</ul>
+
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="ECS" /><category term="EKS" /><category term="ELB" /><summary type="html"><![CDATA[Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.]]></summary></entry></feed>
