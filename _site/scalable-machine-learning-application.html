@@ -166,8 +166,9 @@ our worker application itself.</p>
 <h4 id="application-load-balancer">Application Load Balancer</h4>
 
 <p>Working at level 7 (HTTP), ALB provides great flexibility in choosing how to distribute the load of your application.
-If there is a custom field or want to ensure certain properties are met 
-(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )</p>
+If there is a custom field you want to consider when distributing the load, or you want to ensure certain properties are met 
+(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )
+ALB is going to be your choice.</p>
 
 <h4 id="network-load-balancer">Network Load Balancer</h4>
 
@@ -175,6 +176,8 @@ If there is a custom field or want to ensure certain properties are met
 of the load, so we can use NLB, which works on level 4 of the OSI model, allowing it to achieve great performance and scale to millions of requests per second.</p>
 
 <p>With that, the design of our scalable application serving the heavy ML model is done.</p>
+
+<hr />
 
 <p>Reviewing the requirements, we can conclude the following:</p>
 
@@ -209,8 +212,10 @@ the model to a couple of milliseconds.</li>
 
 <div class="pagination">
   
-    <a href="/reliable-notifications-system" class="left arrow">&#8592;</a>
+    <a href="/tour-of-duty" class="left arrow">&#8592;</a>
   
+  
+    <a href="/reliable-notifications-system" class="right arrow">&#8594;</a>
   
 
   <a href="#" class="top">Top</a>
@@ -219,7 +224,7 @@ the model to a couple of milliseconds.</li>
 
     <footer>
   <span>
-    &copy; <time datetime="2022-06-02 20:29:01 +0300">2022</time> IT in Wonderland
+    &copy; <time datetime="2022-06-03 11:52:32 +0300">2022</time> IT in Wonderland
   </span>
 </footer>
 

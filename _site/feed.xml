@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-02T20:29:01+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT in Wonderland</title><subtitle>A Place to Discuss System Design, Startups, Management, and Other Wonders from the IT World.</subtitle><author><name>Viktor Ivanov</name><email>viktoriivanov@yahoo.com</email></author><entry><title type="html">Tour Of Duty</title><link href="http://localhost:4000/tour-of-duty" rel="alternate" type="text/html" title="Tour Of Duty" /><published>2022-06-02T00:00:00+03:00</published><updated>2022-06-02T00:00:00+03:00</updated><id>http://localhost:4000/tour-of-duty</id><content type="html" xml:base="http://localhost:4000/tour-of-duty"><![CDATA[<p>Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-03T11:52:32+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT in Wonderland</title><subtitle>A Place to Discuss System Design, Startups, Management, and Other Wonders from the IT World.</subtitle><author><name>Viktor Ivanov</name><email>viktoriivanov@yahoo.com</email></author><entry><title type="html">Tour Of Duty</title><link href="http://localhost:4000/tour-of-duty" rel="alternate" type="text/html" title="Tour Of Duty" /><published>2022-06-02T00:00:00+03:00</published><updated>2022-06-02T00:00:00+03:00</updated><id>http://localhost:4000/tour-of-duty</id><content type="html" xml:base="http://localhost:4000/tour-of-duty"><![CDATA[<p>Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the
 really inconvenient question</p>
 
-<p><em>“Tell me something you achieved or built on your current position”</em></p>
+<p><em>Tell me something you achieved or built on your current position</em></p>
 
 <p>This is the moment when you fast-forward that couple of years you spent working on a bunch of stuff, moving Jira tickets left to right, fixing bugs, writing tests, handling new types of data in a pipeline, etc. All this without actually building something big or making any significance at all.</p>
 
@@ -32,11 +32,11 @@ another proposal for a Tour of Duty - maybe scaling the product to millions of u
 
 <p>Such an approach for hiring / looking for a job is mutually beneficial as it sets clear and measurable responsibilities and expectations by the employer.</p>
 
-<p>On the other side, the employee has clear expectations about what has to be done, for how long, and what the outcome be for both sides.</p>
+<p>On the other side, the employee has clear expectations about what has to be done, for how long, and what the outcome will be for both sides.</p>
 
 <p>The end of a Tour of Duty might naturally lead to the end of the employment relations as well but in the IT industry lifelong employment in a single company is rare nowadays anyway.</p>
 
-<p>It is obvious that this approach mitigates the situation described above, but how does that work in practice?</p>
+<p>It is obvious that this approach mitigates the situation described initially, but how does that work in practice?</p>
 
 <h2 id="agreeing-on-a-tour-of-duty">Agreeing on a Tour of Duty</h2>
 
@@ -59,107 +59,12 @@ sacrificing personal time and dedicating to that product for the time of the Tou
 
 <p>There is plenty to be learned in a project and a team, even during a Reserve Duty.</p>
 
-<p>Tour of Duty is a great concept to benefit both companies and employees, and I believe worth considering more often.</p>
+<p>Tour of Duty is a great concept to benefit both companies and employees, and I believe is worth considering more often.</p>
 
 <p>You might be interested in rotating the two approaches throughout your career instead of solely focusing on only one of them,
 but now I hope you have a better understanding of the difference and that there is actually one so you can make a bit more informed decision the next time.</p>
 
-<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="Management" /><category term="Work" /><category term="Career" /><summary type="html"><![CDATA[Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the really inconvenient question]]></summary></entry><entry><title type="html">Reliable Notification System</title><link href="http://localhost:4000/reliable-notifications-system" rel="alternate" type="text/html" title="Reliable Notification System" /><published>2022-05-31T00:00:00+03:00</published><updated>2022-05-31T00:00:00+03:00</updated><id>http://localhost:4000/reliable-notifications-system</id><content type="html" xml:base="http://localhost:4000/reliable-notifications-system"><![CDATA[<p>Almost any application aims to increase engagement by sending notifications to its users.
-LinkedIn sends a notification when someone sees your profile,
-Facebook, when someone sends you a friend request,
-AngelList when your job application has been updated, and so on.</p>
-
-<p>Let’s design such a system enabling great marketing capabilities for an application we are working on.</p>
-
-<p>Requirements:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Events per second: 10,000 
-Notifications type: Email (with easy extensibility to other SMS, push notifications, and more)
-Events source: DynamoDB
-Every event results in an exactly-one notification
-</code></pre></div></div>
-
-<h2 id="analysing-the-requirements">Analysing the requirements</h2>
-
-<h3 id="load">Load</h3>
-
-<p>Considering the number of events per second, we will need a pretty scalable system sending over
-860,400,000 notifications a day.</p>
-
-<p>We can safely assume that each event and notification message will be relatively small - no more than
-a couple of Kbs, Let’s say 5Kb.</p>
-
-<p>This results in 50 Mb/s (400 MB/s) bandwidth, which is no problem for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html" target="_blank">AWS and EC2 Network capabilities</a></p>
-
-<h3 id="notifications-type">Notifications type</h3>
-
-<p>Initially, we want to send email notifications to the users of our application, but we want to support easy
-extensibility with SMS and push notifications, for example.</p>
-
-<p>This means we will need a computational unit ( e.g. server ) to decide and broadcast the event notification and be
-easy to modify and extend.</p>
-
-<h2 id="dynamodb-streams">DynamoDB Streams</h2>
-
-<p>Events are being produced and stored in DynamoDB, as we already know. So we need a way to consume and process them.</p>
-
-<p>DynamoDB Streams is a convenient way to get notified when a change has happened in a DynamoDB table.
-We can subscribe for any of CREATE, UPDATE and DELETE events.</p>
-
-<p>Based on AWS Kinesis DynamoDB Streams provide high performance and reliability. According to their <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html" target="_blank">documentation</a></p>
-
-<p><strong>DynamoDB Streams helps ensure the following:</strong></p>
-
-<ul>
-  <li>
-    <p><strong>Each stream record appears exactly once in the stream.</strong></p>
-  </li>
-  <li>
-    <p><strong>For each item modified in a DynamoDB table, the stream records appear in the same sequence as the actual modifications to the item.</strong></p>
-  </li>
-</ul>
-
-<p>Which meets the exactly-once delivery criteria in the requirements of our application.</p>
-
-<h2 id="ec2">EC2</h2>
-
-<p>We can start thinking of running a server app deployed on an EC2 instance consuming the events and producing notifications, and it would not be a bad solution at all, but 
-is a dedicated server actually necessary?</p>
-
-<p>Having a dedicated server comes with all the problems of keeping the server alive, ensuring up-time, updating and deploying the app without any downtime, and so on.</p>
-
-<h2 id="lambda">Lambda</h2>
-
-<p>This system is asynchronous by design as we are getting the events, and no one waits to check what happens to them.
-We can leverage that by utilizing AWS Lambda as the computational unit we mentioned.</p>
-
-<p>At this point, maybe you wonder why use EC2 or Lambda at all and not just filter-based SNS forwarding messages to the Simple Email Service?
-Because having a dedicated computational unit in the pipeline allows greater flexibility and mitigates the unreliable nature of SNS.</p>
-
-<p>Imagine a future case where you want to send a text message to some user via 3rd party SMS service.
-An event is being stored in DynamoDB and notified through the table stream to SNS, which then filters it and broadcasts it to the appropriate 3rd party service, which unfortunately turns out to be down. The notification is forever lost!</p>
-
-<p>Having a lambda allows retrying or waiting for confirmation which ensures the requested from our application reliability and 
-allows logging the failed notifications, so they can be later processed and eventually delivered.</p>
-
-<p>In addition to that Lambda allows easy implementation of programmatic filtering based on complex attributes living in external DBs and services.</p>
-
-<p>And Finally, it takes less to no time to integrate with DynamoDB Streams and plug in the pipeline, so it’s worth the effort.</p>
-
-<h3 id="why-lambda-and-not-ec2">Why Lambda and not EC2?</h3>
-<ul>
-  <li>You don’t have to manage infrastructure</li>
-  <li>It supports easy deployment without downtime, enabling quick updates of business logic and delivery of features.</li>
-</ul>
-
-<p>Reviewing the requirements, we can conclude the following:</p>
-
-<ul>
-  <li>Lambda can scale up to 1,000 instances and handle 10,000 events/sec with ease.</li>
-  <li>With an appropriate design pattern, we can support many 3rd party services handling the different notification types without compromising the integrity of our service.</li>
-  <li>DynamoDB Streams ( Kinesis ) comes with out-of-the-box exactly-once delivery which combined with Lambda satisfies the ‘exactly one notification’ requirement.</li>
-</ul>
-
-<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="DynamoDB" /><category term="Kinesis" /><category term="Lambda" /><category term="SES" /><summary type="html"><![CDATA[Almost any application aims to increase engagement by sending notifications to its users. LinkedIn sends a notification when someone sees your profile, Facebook, when someone sends you a friend request, AngelList when your job application has been updated, and so on.]]></summary></entry><entry><title type="html">Scalable Machine Learning Application</title><link href="http://localhost:4000/scalable-machine-learning-application" rel="alternate" type="text/html" title="Scalable Machine Learning Application" /><published>2022-05-29T00:00:00+03:00</published><updated>2022-05-29T00:00:00+03:00</updated><id>http://localhost:4000/scalable-machine-learning-application</id><content type="html" xml:base="http://localhost:4000/scalable-machine-learning-application"><![CDATA[<p>Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.</p>
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="Management" /><category term="Work" /><category term="Career" /><summary type="html"><![CDATA[Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the really inconvenient question]]></summary></entry><entry><title type="html">Scalable Machine Learning Application</title><link href="http://localhost:4000/scalable-machine-learning-application" rel="alternate" type="text/html" title="Scalable Machine Learning Application" /><published>2022-05-29T00:00:00+03:00</published><updated>2022-05-29T00:00:00+03:00</updated><id>http://localhost:4000/scalable-machine-learning-application</id><content type="html" xml:base="http://localhost:4000/scalable-machine-learning-application"><![CDATA[<p>Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.</p>
 
 <p>To keep your whole system decoupled, you’d probably want to encapsulate the model in a microservice to
 satisfy the specific computational requirements easier and scale the service independently of the rest of your application.</p>
@@ -245,8 +150,9 @@ our worker application itself.</p>
 <h4 id="application-load-balancer">Application Load Balancer</h4>
 
 <p>Working at level 7 (HTTP), ALB provides great flexibility in choosing how to distribute the load of your application.
-If there is a custom field or want to ensure certain properties are met 
-(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )</p>
+If there is a custom field you want to consider when distributing the load, or you want to ensure certain properties are met 
+(e.g. <a href="https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process." target="_blank">reading your own writes</a> )
+ALB is going to be your choice.</p>
 
 <h4 id="network-load-balancer">Network Load Balancer</h4>
 
@@ -254,6 +160,8 @@ If there is a custom field or want to ensure certain properties are met
 of the load, so we can use NLB, which works on level 4 of the OSI model, allowing it to achieve great performance and scale to millions of requests per second.</p>
 
 <p>With that, the design of our scalable application serving the heavy ML model is done.</p>
+
+<hr />
 
 <p>Reviewing the requirements, we can conclude the following:</p>
 
@@ -279,4 +187,104 @@ Docker allows using a GPU if such is available. EC2 has GPU Instances available,
 the model to a couple of milliseconds.</li>
 </ul>
 
-<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="ECS" /><category term="EKS" /><category term="ELB" /><summary type="html"><![CDATA[Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.]]></summary></entry></feed>
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="ECS" /><category term="EKS" /><category term="ELB" /><summary type="html"><![CDATA[Imagine having a heavy Machine Learning model you want to use in a data-intensive pipeline in your application.]]></summary></entry><entry><title type="html">Reliable Notification System</title><link href="http://localhost:4000/reliable-notifications-system" rel="alternate" type="text/html" title="Reliable Notification System" /><published>2022-05-21T00:00:00+03:00</published><updated>2022-05-21T00:00:00+03:00</updated><id>http://localhost:4000/reliable-notifications-system</id><content type="html" xml:base="http://localhost:4000/reliable-notifications-system"><![CDATA[<p>Almost any application aims to increase engagement by sending notifications to its users.
+LinkedIn sends a notification when someone sees your profile,
+Facebook, when someone sends you a friend request,
+AngelList when your job application has been updated, and so on.</p>
+
+<p>Let’s design such a system enabling great marketing capabilities for an application we are working on.</p>
+
+<p>Requirements:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Events per second: 10,000 
+Notifications type: Email (with easy extensibility to SMS, push notifications, and more)
+Events source: DynamoDB
+Every event results in an exactly-one notification
+</code></pre></div></div>
+
+<h2 id="analysing-the-requirements">Analysing the requirements</h2>
+
+<h3 id="load">Load</h3>
+
+<p>Considering the number of events per second, we will need a pretty scalable system sending over
+860,400,000 notifications a day.</p>
+
+<p>We can safely assume that each event and notification message will be relatively small - no more than
+a couple of Kbs, Let’s say 5Kb.</p>
+
+<p>This results in 50 Mb/s (400 MB/s) bandwidth, which is no problem for the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html" target="_blank">AWS and EC2 Network capabilities</a></p>
+
+<h3 id="notifications-type">Notifications type</h3>
+
+<p>Initially, we want to send email notifications to the users of our application, but we want to support easy
+extensibility with SMS and push notifications, for example.</p>
+
+<p>This means we will need a computational unit ( e.g. server ) to decide and broadcast the event notification and be
+easy to modify and extend.</p>
+
+<h2 id="dynamodb-streams">DynamoDB Streams</h2>
+
+<p>Events are being produced and stored in DynamoDB, as we already know. So we need a way to consume and process them.</p>
+
+<p>DynamoDB Streams is a convenient way to get notified when a change has happened in a DynamoDB table.
+We can subscribe for any of CREATE, UPDATE and DELETE events.</p>
+
+<p>Based on AWS Kinesis DynamoDB Streams provide high performance and reliability. According to their <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html" target="_blank">documentation</a></p>
+
+<p><strong>DynamoDB Streams helps ensure the following:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Each stream record appears exactly once in the stream.</strong></p>
+  </li>
+  <li>
+    <p><strong>For each item modified in a DynamoDB table, the stream records appear in the same sequence as the actual modifications to the item.</strong></p>
+  </li>
+</ul>
+
+<p>Which meets the exactly-once delivery criteria in the requirements of our application.</p>
+
+<h2 id="ec2">EC2</h2>
+
+<p>We can start thinking of running a server app deployed on an EC2 instance consuming the events and producing notifications, and it would not be a bad solution at all, but 
+is a dedicated server actually necessary?</p>
+
+<p>Having a dedicated server comes with all the problems of keeping the server alive, ensuring up-time, updating and deploying the app without any downtime, and so on.</p>
+
+<h2 id="lambda">Lambda</h2>
+
+<p>This system is asynchronous by design as we are getting the events, and no one waits to check what happens to them.
+We can leverage that by utilizing AWS Lambda as the computational unit we mentioned.</p>
+
+<p>At this point, maybe you wonder why use EC2 or Lambda at all and not just filter-based SNS forwarding messages to the Simple Email Service?</p>
+
+<p>Because having a dedicated computational unit in the pipeline allows greater flexibility and mitigates the unreliable nature of SNS.</p>
+
+<p>Imagine a future case where you want to send a text message to some user via 3rd party SMS service.
+An event is being stored in DynamoDB and notified through the table stream to SNS, which then filters it and broadcasts it to the appropriate 3rd party service, which unfortunately turns out to be down. The notification is forever lost!</p>
+
+<p>Having a Lambda allows retrying or waiting for confirmation which ensures the requested from our application reliability and 
+allows logging the failed notifications, so they can be later processed and eventually delivered.</p>
+
+<p><img src="/assets/posts/dynamodb-kinesis-lambda-ses-pipeline.png" alt="Reliable notifications pipeline" /></p>
+
+<p>In addition to that Lambda allows easy implementation of programmatic filtering based on complex attributes living in external DBs and services.</p>
+
+<p>And Finally, it takes less to no time to integrate with DynamoDB Streams and plug in the pipeline, so it’s worth the effort.</p>
+
+<h3 id="why-lambda-and-not-ec2">Why Lambda and not EC2?</h3>
+<ul>
+  <li>You don’t have to manage infrastructure</li>
+  <li>It supports easy deployment without downtime, enabling quick updates of business logic and delivery of features.</li>
+</ul>
+
+<hr />
+
+<p>Reviewing the requirements, we can conclude the following:</p>
+
+<ul>
+  <li>Lambda can scale up to 1,000 instances and handle 10,000 events/sec with ease.</li>
+  <li>With an appropriate design pattern, we can support many 3rd party services handling the different notification types without compromising the integrity of our service.</li>
+  <li>DynamoDB Streams ( Kinesis ) comes with out-of-the-box exactly-once delivery which combined with Lambda satisfies the ‘exactly one notification’ requirement.</li>
+</ul>
+
+<p><strong>Thank you for reading!</strong></p>]]></content><author><name>Viktor</name></author><category term="AWS" /><category term="DynamoDB" /><category term="Kinesis" /><category term="Lambda" /><category term="SES" /><summary type="html"><![CDATA[Almost any application aims to increase engagement by sending notifications to its users. LinkedIn sends a notification when someone sees your profile, Facebook, when someone sends you a friend request, AngelList when your job application has been updated, and so on.]]></summary></entry></feed>

@@ -15,7 +15,7 @@ Let's design such a system enabling great marketing capabilities for an applicat
 Requirements:
 ```
 Events per second: 10,000 
-Notifications type: Email (with easy extensibility to other SMS, push notifications, and more)
+Notifications type: Email (with easy extensibility to SMS, push notifications, and more)
 Events source: DynamoDB
 Every event results in an exactly-one notification
 ```
@@ -70,13 +70,16 @@ This system is asynchronous by design as we are getting the events, and no one w
 We can leverage that by utilizing AWS Lambda as the computational unit we mentioned.
 
 At this point, maybe you wonder why use EC2 or Lambda at all and not just filter-based SNS forwarding messages to the Simple Email Service?
+
 Because having a dedicated computational unit in the pipeline allows greater flexibility and mitigates the unreliable nature of SNS.
 
 Imagine a future case where you want to send a text message to some user via 3rd party SMS service.
 An event is being stored in DynamoDB and notified through the table stream to SNS, which then filters it and broadcasts it to the appropriate 3rd party service, which unfortunately turns out to be down. The notification is forever lost!
 
-Having a lambda allows retrying or waiting for confirmation which ensures the requested from our application reliability and 
+Having a Lambda allows retrying or waiting for confirmation which ensures the requested from our application reliability and 
 allows logging the failed notifications, so they can be later processed and eventually delivered.
+
+![Reliable notifications pipeline](/assets/posts/dynamodb-kinesis-lambda-ses-pipeline.png)
 
 In addition to that Lambda allows easy implementation of programmatic filtering based on complex attributes living in external DBs and services.
 
@@ -85,6 +88,8 @@ And Finally, it takes less to no time to integrate with DynamoDB Streams and plu
 ### Why Lambda and not EC2?
 * You don't have to manage infrastructure
 * It supports easy deployment without downtime, enabling quick updates of business logic and delivery of features.
+
+---
 
 Reviewing the requirements, we can conclude the following:
 

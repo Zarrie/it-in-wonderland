@@ -8,7 +8,7 @@ tags: [Management, Work, Career]
 Have you ever landed a position where you spent a few years, and you were pretty happy, but when it came time for you to leave, you went on a couple of interviews only to get asked the
 really inconvenient question
 
-*"Tell me something you achieved or built on your current position"*
+*Tell me something you achieved or built on your current position*
 
 This is the moment when you fast-forward that couple of years you spent working on a bunch of stuff, moving Jira tickets left to right, fixing bugs, writing tests, handling new types of data in a pipeline, etc. All this without actually building something big or making any significance at all.
 
@@ -37,11 +37,11 @@ another proposal for a Tour of Duty - maybe scaling the product to millions of u
 
 Such an approach for hiring / looking for a job is mutually beneficial as it sets clear and measurable responsibilities and expectations by the employer.
 
-On the other side, the employee has clear expectations about what has to be done, for how long, and what the outcome be for both sides.
+On the other side, the employee has clear expectations about what has to be done, for how long, and what the outcome will be for both sides.
 
 The end of a Tour of Duty might naturally lead to the end of the employment relations as well but in the IT industry lifelong employment in a single company is rare nowadays anyway.
 
-It is obvious that this approach mitigates the situation described above, but how does that work in practice?
+It is obvious that this approach mitigates the situation described initially, but how does that work in practice?
 
 ## Agreeing on a Tour of Duty
 
@@ -64,7 +64,7 @@ sacrificing personal time and dedicating to that product for the time of the Tou
 
 There is plenty to be learned in a project and a team, even during a Reserve Duty.
 
-Tour of Duty is a great concept to benefit both companies and employees, and I believe worth considering more often.
+Tour of Duty is a great concept to benefit both companies and employees, and I believe is worth considering more often.
 
 You might be interested in rotating the two approaches throughout your career instead of solely focusing on only one of them,
 but now I hope you have a better understanding of the difference and that there is actually one so you can make a bit more informed decision the next time.

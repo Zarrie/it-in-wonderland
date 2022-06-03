@@ -90,8 +90,9 @@ We have two options worth exploring:
 #### Application Load Balancer
 
 Working at level 7 (HTTP), ALB provides great flexibility in choosing how to distribute the load of your application.
-If there is a custom field or want to ensure certain properties are met 
+If there is a custom field you want to consider when distributing the load, or you want to ensure certain properties are met 
 (e.g. [reading your own writes](https://jepsen.io/consistency/models/monotonic-reads#:~:text=Monotonic%20reads%20ensures%20that%20if,reads%20by%20the%20same%20process.){:target="_blank"} )
+ALB is going to be your choice.
 
 #### Network Load Balancer
 
@@ -99,6 +100,8 @@ Given the requirements of our application, we are completely okay with not imple
 of the load, so we can use NLB, which works on level 4 of the OSI model, allowing it to achieve great performance and scale to millions of requests per second.
 
 With that, the design of our scalable application serving the heavy ML model is done.
+
+---
 
 Reviewing the requirements, we can conclude the following:
 
