@@ -53,3 +53,9 @@ It's the only book that talks about management in a simple constructive way, mak
 After I graduated from University I gradually stopped having deep focused time for work.
 Work, life, and all Other distractions really helped that.
 This book opened my eyes to that and helped me learn how to prevent that and have quality time for deep work when needed.
+
+## [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://www.goodreads.com/book/show/23466395-designing-data-intensive-applications)
+
+A great book on all the problems a distributed system might experience. This book is a balanced combination of theory and practice
+on building and maintaining scalable databases and applications. The book covers so many real issues distributed systems experience that I constantly had the feeling the Internet is going to collapse at any moment.
+
